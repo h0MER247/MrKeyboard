@@ -34,10 +34,10 @@ enum PS2Result {
 class PS2Device {
 
   public:
-		PS2Device(uint8_t pinClock, uint8_t pinData);
-		
-		PS2Result writePS2(uint8_t data);
-		PS2Result readPS2(uint8_t *data);
+    PS2Device(uint8_t pinClock, uint8_t pinData);
+    
+    PS2Result writePS2(uint8_t data);
+    PS2Result readPS2(uint8_t *data);
 
   private:
     inline void waitFullClockCycle() { delayMicroseconds(40); }
@@ -51,9 +51,9 @@ class PS2Device {
     inline uint8_t getClockLine() { return digitalRead(m_pinClock); }
     inline uint8_t getDataLine() { return digitalRead(m_pinData); }
    
-	private:
-		uint8_t m_pinClock;
-		uint8_t m_pinData;
+  private:
+    uint8_t m_pinClock;
+    uint8_t m_pinData;
 };
 
 #endif /* __PS2_DEVICE_H__ */

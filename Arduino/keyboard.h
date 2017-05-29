@@ -29,16 +29,16 @@
 class PS2Keyboard : public PS2Device {
   
   public:
-	  PS2Keyboard(uint8_t pinClock,
-	              uint8_t pinData,
-	              uint8_t pinNumLockLED,
-	              uint8_t pinCapsLockLED,
-	              uint8_t pinScrollLockLED);
+    PS2Keyboard(uint8_t pinClock,
+                uint8_t pinData,
+                uint8_t pinNumLockLED,
+                uint8_t pinCapsLockLED,
+                uint8_t pinScrollLockLED);
     PS2Keyboard(uint8_t pinClock,
                 uint8_t pinData);
     ~PS2Keyboard();
                 
-		void pressKey(uint8_t vKey);
+    void pressKey(uint8_t vKey);
     void releaseKey(uint8_t vKey);
     void update();
     
@@ -50,7 +50,7 @@ class PS2Keyboard : public PS2Device {
     bool isKeyMapped(uint8_t vKey);
     void sendScancodeForKey(bool isMakeCode, uint8_t vKey);
     
-	private:
+  private:
     uint8_t m_pinNumLockLED;
     uint8_t m_pinCapsLockLED;
     uint8_t m_pinScrollLockLED;
