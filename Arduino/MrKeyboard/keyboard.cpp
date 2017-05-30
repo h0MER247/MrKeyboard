@@ -396,9 +396,9 @@ void PS2Keyboard::onSetLEDState(uint8_t data) {
   
   if(m_useLEDs) {
   
-    uint8_t scrollLock = ((data & 0x01) != 0) ? HIGH : LOW;
-    uint8_t numLock = ((data & 0x02) != 0) ? HIGH : LOW;
-    uint8_t capsLock = ((data & 0x04) != 0) ? HIGH : LOW;
+    uint8_t scrollLock = ((data & LED_SCROLLLOCK) != 0) ? HIGH : LOW;
+    uint8_t numLock = ((data & LED_NUMLOCK) != 0) ? HIGH : LOW;
+    uint8_t capsLock = ((data & LED_CAPSLOCK) != 0) ? HIGH : LOW;
     
     digitalWrite(m_pinScrollLockLED, scrollLock);
     digitalWrite(m_pinNumLockLED, numLock);
